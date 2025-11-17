@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../media/img-site/logo-site-meutube-icon.png" type="image/x-icon">
+    {% block styles %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header class="flex-container">
+        <div id="logo-site">
+            <img src="../media/img-site/logo-site-meutube.png" alt="logo-site">
+        </div>
+        <nav>
+            <ul id="nav-menu" class="flex-container">
+                <li><a href="">Item 1</a></li>
+                <li><a href="">Item 1</a></li>
+                <li><a href="">Item 1</a></li>
+                <li><a href="">Item 1</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>
+        <h5>&copy; 2025, MEUTUBE. Todos os direitos reservados.</h5>
+    </footer>
+
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
