@@ -1,9 +1,67 @@
 {% extends "base.html" %} {% load static %}
 
-{% block title %}MeuTube - Download Video Youtube{% endblock %}
+{% block title %}MeuTube - Baixe Seus Video do Youtube{% endblock %}
 
-{% block styles %}{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
 
-{% block content %}{% endblock %}
+{% block content %}
+<section id="hero-section" class="flex-container">
+    <div id="download-area">
+        <h1 class="main-subtitle">Baixe Vídeos do YouTube
+            <span class="destaque">de Forma Simples</span>
+            .
+        </h1>
+        <p class="secondary-text">Sua ferramenta rápida e segura para conversão e download de vídeos.</p>
+        <form id="download-form" action="#" method="POST" class="flex-container">
+            {% csrf_token %}
+            <div id="input-wrapper" class="flex-container">
+                <input 
+                    type="url" 
+                    id="video_url" 
+                    name="video_url" 
+                    placeholder="Cole o link do vídeo do YouTube aqui..." 
+                    required
+                >
+            </div>
+            <button type="submit" id="download-btn" class="flex-container">
+                Baixar
+            </button>
+        </form>
+        <p class="guideline-text">Ao clicar em "Baixar", você concorda com nossas diretrizes de uso justo.</p>
+    </div>
+</section>
+<hr class="separator">
+<section id="instructions-section">
+    <h2>Como Funciona?</h2>
+    <div id="instruction-cards" class="flex-container">
+        <div class="card">
+            <img src="{% static 'img/step-1.png' %}" alt="Copiar Link">
+            <p class="card-description flex-container">
+                <span>1. Copie o link do vídeo no YouTube.</span>
+            </p>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/step-2.png' %}" alt="Colar Link">
+            <p class="card-description flex-container">
+                <span>2. Cole o link na barra de pesquisa acima.</span>
+            </p>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/step-3.png' %}" alt="Escolher Qualidade">
+            <p class="card-description flex-container">
+                <span>3. Selecione o formato ou qualidade desejada.</span>
+            </p>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/step-4.png' %}" alt="Fazer Download">
+            <p class="card-description flex-container">
+                <span>4. Clique em "Baixar" e aproveite!</span>
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
 
 {% block scripts %}{% endblock %}

@@ -87,12 +87,15 @@ header {
     height: 100%;
     box-shadow: 0px 0px 1px 2px var(--color-primary);
     padding: 0.3rem;
+    transition: all 0.4s ease-in;
 }& #logo-site img:hover {
     box-shadow: 0px 0px 1px 2px var(--color-destaque-primary);
 }
 
 #nav-menu li {
     color: var(--color-font);
+}& #nav-menu li a {
+    transition: all 0.4s ease-in;
 }& #nav-menu li a:hover {
     text-decoration-line: underline;
     text-underline-offset: 0.4rem;

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
+
+#hero-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: var(--color-font);
+}
+
+.main-subtitle {
+    font-family: "Domine", serif; 
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.main-subtitle .destaque {
+    color: var(--color-destaque-primary);
+    transition: all 0.35s ease-in;
+    display: inline-block;
+}
+
+.main-subtitle .destaque:hover {
+    transform: scale(1.035);
+}
+
+.secondary-text {
+    font-size: 1rem;
+    color: var(--color-secundary);
+    margin-bottom: 2rem;
+}
+
+.guideline-text {
+    font-size: 0.8rem;
+    color: var(--color-secundary);
+    opacity: 0.7;
+    margin-top: 1.5rem;
+}
+
+#download-form {
+    margin: 0 auto;
+    gap: 1rem;
+    width: 80%;
+    max-width: 700px;
+    background-color: var(--color-background-primary); 
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 0 15px var(--color-destaque-primary); 
+}
+
+#input-wrapper {
+    flex-grow: 1; 
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+}
+
+#video_url {
+    border: none;
+    background: transparent;
+    color: var(--color-font);
+    padding: 0;
+    width: 100%;
+    outline: none; 
+}
+#video_url::placeholder {
+    color: var(--color-secundary);
+    opacity: 0.8;
+}
+
+#download-btn {
+    background-color: var(--color-destaque-primary);
+    color: var(--color-font);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+#download-btn:hover {
+    background-color: var(--color-light); 
+}
+
+.separator {
+    border: 1px solid var(--color-primary);
+    margin: 4rem auto;
+    width: 50%;
+    opacity: 0.5;
+}
+
+#instructions-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-destaque-secundary);
+}
+
+#instruction-cards {
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap; 
+}
+
+.card {
+    background-color: var(--color-background-primary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--color-primary);
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    border-color: var(--color-destaque-primary);
+}
+
+.card img {
+    width: 100px; 
+    height: auto;
+    margin: 0 auto 1rem auto; 
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--color-font);
+    align-items: center;
+    justify-content: center; 
+    gap: 0.5rem;
+    font-weight: 500;
+}
