@@ -56,7 +56,7 @@ a {
 
 /* Gerais */
 body {
-    padding-top: 3rem;
+    padding-top: 4rem;
     padding-left: 6rem;
     padding-right: 6rem;
     background-color: var(--color-background-secundary);
@@ -74,6 +74,16 @@ body {
 header {
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color-background-primary);
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }& nav ul {
     flex-direction: row;
     justify-content: space-between;
@@ -109,5 +119,10 @@ header {
 /* FOOTER */
 footer {
     text-align: center;
+    align-items: center;
+    margin-top: 6rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    color: var(--color-secundary);
 }
 /* Fim - FOOTER */

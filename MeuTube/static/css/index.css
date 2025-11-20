@@ -124,9 +124,12 @@
 }
 
 .card img {
-    width: 100px; 
+    width: 150px; 
     height: auto;
-    margin: 0 auto 1rem auto; 
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px var(--color-font);
+   opacity: 0.9; 
 }
 
 .card-description {
