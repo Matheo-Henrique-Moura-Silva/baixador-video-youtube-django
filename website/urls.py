@@ -3,6 +3,7 @@ from . import views
 
 app_name = 'website'
 
-urlpatterns = {
+urlpatterns = [
     path('', views.index, name='index'),
-}
+    path('search/', views.processar_download, name='processar_download'),
+]

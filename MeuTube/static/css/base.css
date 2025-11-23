@@ -10,6 +10,8 @@
     --color-secundary: #AC79F2;
     --color-light: #8552F2;
     --color-primary: #387357;
+    --color-error: #F25252;
+    --color-warning: #F2C94C;
     --font-primary: "JetBrains Mono", monospace;;
 }
 /* Fim - Variaveis */
@@ -114,6 +116,45 @@ header {
 /* Fim - HEADER */
 
 /* MAIN */
+#feedback-messages {
+    width: 40%;
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+    text-align: center; 
+}
+
+.alert {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--color-background-primary);
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.success {
+    background-color: var(--color-destaque-secundary);
+    border: 1px solid var(--color-destaque-secundary);
+}
+
+.error {
+    background-color: var(--color-error); 
+    border: 1px solid var(--color-error);
+    color: var(--color-font);
+}
+
+.warning {
+    background-color: var(--color-warning); 
+    border: 1px solid var(--color-warning);
+    color: #333;
+}
+
+.info {
+    background-color: var(--color-secundary); 
+    border: 1px solid var(--color-light);
+    color: var(--color-background-primary);
+}
 /* Fim - MAIN */
 
 /* FOOTER */

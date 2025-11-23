@@ -14,15 +14,13 @@
             .
         </h1>
         <p class="secondary-text">Sua ferramenta rápida e segura para conversão e download de vídeos.</p>
-        <form id="download-form" action="#" method="POST" class="flex-container">
+        <form id="download-form" action="{% url 'website:processar_download' %}" method="POST" class="flex-container">
             {% csrf_token %}
             <div id="input-wrapper" class="flex-container">
-                <input 
-                    type="url" 
+                <input
                     id="video_url" 
                     name="video_url" 
-                    placeholder="Cole o link do vídeo do YouTube aqui..." 
-                    required
+                    placeholder="Cole o link do vídeo do YouTube aqui..."
                 >
             </div>
             <button type="submit" id="download-btn" class="flex-container">
@@ -30,6 +28,40 @@
             </button>
         </form>
         <p class="guideline-text">Ao clicar em "Baixar", você concorda com nossas diretrizes de uso justo.</p>
+        {% if messages %}
+            <div id="feedback-messages">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <!-- Sessão de Opções de Download -->
+         {% if request %}
+        <section id="video-options-section" class="flex-container">
+            
+            <div id="video-info" class="flex-container">
+                <img src="#" alt="Thumbnail do Vídeo" id="video-thumbnail">
+                <h3 id="video-title">{{ video_data.title }}</h3>
+            </div>
+            
+            <div id="download-buttons-group" class="flex-container">
+                <p class="download-label">Qualidades Disponíveis:</p>
+                
+                {% for q in video_data.available_qualities %}
+                    <a href="#" class="download-btn-quality">
+                        {{ q.res }}
+                    </a>
+                {% endfor %}
+
+                <a href="#" class="download-btn-quality high-res-warning">1080p*</a>
+                
+            </div>
+            
+        </section>
+        <p class="guideline-text high-res-note">*Qualidades acima de 720p podem exigir processamento extra (somente vídeo).</p>
+        {% endif %}
     </div>
 </section>
 <hr class="separator">
