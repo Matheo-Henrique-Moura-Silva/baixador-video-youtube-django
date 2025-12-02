@@ -12,22 +12,67 @@
 <body>
     <header class="flex-container">
         <div id="logo-site">
-            <img src="../media/img-site/logo-site-meutube.png" alt="logo-site">
+            <a href="{% url 'website:index' %}">
+                <img src="../media/img-site/logo-site-meutube.png" alt="logo-site">
+            </a>
         </div>
         <nav>
             <ul id="nav-menu" class="flex-container">
-                <li><a href="">Item 1</a></li>
-                <li><a href="">Item 1</a></li>
-                <li><a href="">Item 1</a></li>
-                <li><a href="">Item 1</a></li>
-            </ul>
+                <li><a href="{% url 'website:processar_video' %}">[ Video Download MP4 ]</a></li>
+                <li><a href="">[ Video Converter MP3 ]</a></li>
         </nav>
     </header>
 
     <main>{% block content %}{% endblock %}</main>
 
     <footer>
-        <h5>&copy; 2025, MEUTUBE. Todos os direitos reservados.</h5>
+        <div class="footer-content">
+
+            <div class="footer-col footer-suporte">
+                <h3>Ajuda & Suporte</h3>
+                <ul>
+                    <li><a href="">FAQ (Perguntas Frequentes)</a></li>
+                    <li><a href="">Central de Ajuda/Suporte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-legal-contato">
+                <h3>Legal & Contato</h3>
+                
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/politica-privacidade">Política de Privacidade</a></li>
+                    <li><a href="/termos-de-uso">Termos de Uso/Serviço</a></li>
+                </ul>
+                
+                <h4>Contato</h4>
+                <p>Email: <a href="mailto:henriquematheo@hotmail.com">henriquematheo@hotmail.com</a></p>
+                <p>Telefone: <a href="tel:+5547999606784">(47) 99960-6784</a></p>
+            </div>
+
+            <div class="footer-col footer-logo-social">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/matheohenrique/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Matheo-Henrique-Moura-Silva" target="_blank">GitHub</a>
+                    <a href="https://matheo-henrique-moura-silva.github.io/" target="_blank">Portfólio</a>
+                    <a href="https://instagram.com/henrique_matheo" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="footer-bottom">
+            <hr>
+            
+            <p class="endereco">
+                Endereço: Centro, Petrolândia, Santa Catarina, Brasil.
+            </p>
+
+            <p class="copyright">
+                &copy; 2025 MeuTube. Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
 
     <script src="{% static 'js/base.js' %}"></script>

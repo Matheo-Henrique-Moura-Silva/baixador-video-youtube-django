@@ -5,5 +5,6 @@ app_name = 'website'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('search/', views.processar_download, name='processar_download'),
+    path('search/', views.processar_video, name='processar_video'),
+    path('download/', views.iniciar_download, name='iniciar_download'),
 ]

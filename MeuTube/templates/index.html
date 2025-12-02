@@ -1,6 +1,12 @@
 {% extends "base.html" %} {% load static %}
 
-{% block title %}MeuTube - Baixe Seus Video do Youtube{% endblock %}
+{% block title %}
+    {% if mostrar_opcoes and formatos %}
+        MeuTube - {{ titulo }}
+    {% else %}
+        MeuTube - Baixe Seus Video do Youtube
+    {% endif %}
+{% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -14,13 +20,14 @@
             .
         </h1>
         <p class="secondary-text">Sua ferramenta rápida e segura para conversão e download de vídeos.</p>
-        <form id="download-form" action="{% url 'website:processar_download' %}" method="POST" class="flex-container">
+        <form id="download-form" action="{% url 'website:processar_video' %}" method="POST" class="flex-container">
             {% csrf_token %}
             <div id="input-wrapper" class="flex-container">
                 <input
                     id="video_url" 
                     name="video_url" 
-                    placeholder="Cole o link do vídeo do YouTube aqui..."
+                    placeholder="{% if mostrar_opcoes and formatos %}{% else %}Cole o link do vídeo do YouTube aqui...{% endif %}"
+                    value="{% if mostrar_opcoes and formatos %}{{ url }}{% endif %}"
                 >
             </div>
             <button type="submit" id="download-btn" class="flex-container">
@@ -38,24 +45,53 @@
             </div>
         {% endif %}
         <!-- Sessão de Opções de Download -->
-         {% if request %}
+         {% if mostrar_opcoes and formatos %}
         <section id="video-options-section" class="flex-container">
             
             <div id="video-info" class="flex-container">
-                <img src="#" alt="Thumbnail do Vídeo" id="video-thumbnail">
-                <h3 id="video-title">{{ video_data.title }}</h3>
+                <a href="{{ url }}" target="_blank">
+                    <img src="{{ thumbnail }}" alt="Thumbnail do Vídeo" id="video-thumbnail">
+                </a>
+                <a href="{{ url }}" target="_blank">
+                    <h3 id="video-title">{{ titulo }}</h3>
+                </a>
             </div>
             
             <div id="download-buttons-group" class="flex-container">
-                <p class="download-label">Qualidades Disponíveis:</p>
-                
-                {% for q in video_data.available_qualities %}
-                    <a href="#" class="download-btn-quality">
-                        {{ q.res }}
-                    </a>
-                {% endfor %}
-
-                <a href="#" class="download-btn-quality high-res-warning">1080p*</a>
+                <p class="download-label">Qualidades De Vídeos Disponíveis:</p>
+                {% if formatos %}
+                    {% for op, valor in formatos.items %}
+                        <form action="{% url 'website:iniciar_download' %}" method="POST">
+                            {% csrf_token %}
+                            {% for key, value in valor.items %}
+                                {% if key == 'format_id' %}
+                                    <input
+                                        id="id_formato"
+                                        name="id_formato"
+                                        style="display: none;"
+                                        value="{{ value }}"
+                                    >
+                                {% endif %}
+                            {% endfor %}
+                            <input
+                                id="id_url"
+                                name="id_url"
+                                style="display: none;"
+                                value="{{ url }}"
+                            >
+                            <button type="submit" class="download-btn-quality">
+                                Baixar | {{ op }}p |
+                                {% for key, value in valor.items %}
+                                    {% if key == 'tamanho' %}
+                                        {{ value }}
+                                    {% endif %}
+                                {% endfor %}
+                            </button>
+                        </form>
+                    {% endfor %}
+                {% else %}
+                    <p style="cursor: not-allowed;" class="download-btn-quality">Nenhuma opção de Download</p>
+                {% endif %}
                 
             </div>
             

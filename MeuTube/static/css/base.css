@@ -59,8 +59,6 @@ a {
 /* Gerais */
 body {
     padding-top: 4rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
     background-color: var(--color-background-secundary);
     font-family: var(--font-primary);
 }
@@ -116,6 +114,11 @@ header {
 /* Fim - HEADER */
 
 /* MAIN */
+main {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
 #feedback-messages {
     width: 40%;
     max-width: 700px;
@@ -159,11 +162,39 @@ header {
 
 /* FOOTER */
 footer {
+    padding-top: 15rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; 
+    padding: 20px 5%;
+    background-color: var(--color-background-primary); 
+    color:var(--color-destaque-secundary);
+    flex-wrap: wrap; 
+}
+
+.footer-col {
+    width: 250px; 
+    margin-bottom: 20px;
+}
+
+.footer-col a {
+    color: var(--color-font); 
+    text-decoration: none;
+    display: block; 
+    padding: 5px 0;
+}
+.footer-col a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-font);
+}
+
+.footer-bottom {
     text-align: center;
-    align-items: center;
-    margin-top: 6rem;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-    color: var(--color-secundary);
+    padding: 10px 5%;
+    background-color: var(--color-primary);
+    color: var(--color-font);
+    font-size: 0.8em;
 }
 /* Fim - FOOTER */
