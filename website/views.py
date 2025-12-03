@@ -13,6 +13,12 @@ def index(request):
     if request.method == "GET":
         return render(request, 'index.html', {'mostrar_opcoes': False})
 
+def termos_de_uso(request):
+    return render(request, 'termos.html')
+
+def isencao_responsabilidade(request):
+    return render(request, 'isencao.html')
+
 def iniciar_download(request):
     if request.method != "POST":
         messages.info(request, "Ação não permitida pelo sistema.")

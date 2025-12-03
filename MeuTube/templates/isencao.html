@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% load static %}
+
+{% block title %}MeuTube - Isenção de Responsabilidade{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="termos-container">
+    <h1>Isenção de Responsabilidade (Disclaimer)</h1>
+
+    <p>A presente Isenção de Responsabilidade estabelece as condições sob as quais o MeuTube (doravante denominado "Serviço" ou "Plataforma") é fornecido. Ao utilizar o Serviço, você aceita estas condições de forma integral e incondicional.</p>
+
+    <div class="alerta-responsabilidade">
+        <strong>AVISO LEGAL:</strong> O MeuTube é uma ferramenta de terceiros. Nós não fornecemos garantias sobre a legalidade do uso de conteúdo baixado. A responsabilidade por qualquer violação de direitos autorais ou uso indevido do material é exclusiva e integral do usuário.
+    </div>
+
+    <h3>1. Natureza do Serviço e Conteúdo</h3>
+    <p>O MeuTube é uma ferramenta técnica projetada para **facilitar o processo de conversão e download** de *streams* de dados acessíveis publicamente em plataformas de vídeo de terceiros (como o YouTube).</p>
+    <ul>
+        <li><strong>Não Hospedamos Conteúdo:</strong> O MeuTube **não hospeda, armazena, distribui, monetiza ou controla** o conteúdo de vídeo ou áudio. Todo o processamento é feito em tempo real e os dados são transmitidos diretamente ao usuário.</li>
+        <li><strong>Qualidade e Disponibilidade:</strong> Não garantimos que o Serviço estará sempre disponível, será livre de erros, ou que a qualidade do arquivo final corresponderá perfeitamente à fonte, uma vez que dependemos da integridade do *stream* original.</li>
+    </ul>
+
+    <h3>2. Exclusão de Garantias e Limitação de Responsabilidade</h3>
+    <p>O Serviço é fornecido "como está" e "conforme disponível". O MeuTube, seus proprietários, diretores e afiliados renunciam a todas as garantias, expressas ou implícitas, na máxima extensão permitida pela lei.</p>
+    <ul>
+        <li><strong>Danos e Prejuízos:</strong> Em nenhuma circunstância o MeuTube será responsável por quaisquer danos diretos, indiretos, incidentais, punitivos, ou consequenciais (incluindo, mas não se limitando a, perda de lucros, dados ou outras perdas intangíveis) decorrentes do uso ou da incapacidade de usar o Serviço.</li>
+        <li><strong>Vírus e Malware:</strong> Embora tomemos medidas razoáveis para garantir a segurança da Plataforma, não podemos garantir que os arquivos baixados estejam livres de vírus ou outros códigos maliciosos. O uso de software antivírus é responsabilidade do usuário.</li>
+    </ul>
+    
+    <h3>3. Isenção de Responsabilidade sobre Direitos Autorais</h3>
+    <p>Esta seção é crucial para a proteção legal da Plataforma.</p>
+    <ul>
+        <li><strong>Violação de Direitos Autorais:</strong> O MeuTube é uma ferramenta de propósito geral. Não verificamos se o usuário possui os direitos de uso do conteúdo solicitado. Qualquer ato de download, cópia, distribuição ou uso comercial do conteúdo protegido por direitos autorais constitui uma **violação da lei de propriedade intelectual** e a responsabilidade é exclusiva do usuário.</li>
+        <li><strong>Conformidade com os Termos de Terceiros:</strong> O usuário é responsável por garantir que o uso do Serviço esteja em conformidade com os Termos de Serviço de todas as plataformas de terceiros, incluindo o YouTube, que geralmente proíbem o download não autorizado de seu conteúdo.</li>
+        <li><strong>Notificações Legais:</strong> Em caso de recebimento de notificações legais ou solicitações de remoção (como avisos DMCA) relacionadas a uma URL, reservamo-nos o direito de bloquear imediatamente o processamento dessa URL na Plataforma.</li>
+    </ul>
+    
+    <h3>4. Links para Terceiros</h3>
+    <p>O MeuTube não se responsabiliza pelo conteúdo de quaisquer sites externos que possam ser acessados através de links fornecidos no Serviço. O acesso a sites de terceiros é de risco exclusivo do usuário.</p>
+
+    <hr>
+    <p style="text-align: right; font-size: 0.85em;">
+        Esta Isenção de Responsabilidade pode ser atualizada a qualquer momento.
+    </p>
+</div>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

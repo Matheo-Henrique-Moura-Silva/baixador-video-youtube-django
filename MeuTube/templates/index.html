@@ -19,7 +19,8 @@
             <span class="destaque">de Forma Simples</span>
             .
         </h1>
-        <p class="secondary-text">Sua ferramenta rápida e segura para conversão e download de vídeos.</p>
+        <p class="secondary-text">Ao clicar em "Baixar", você concorda com nossos
+            <a href="{% url 'website:termos_de_uso' %}">"Termos de Uso"</a>.</p>
         <form id="download-form" action="{% url 'website:processar_video' %}" method="POST" class="flex-container">
             {% csrf_token %}
             <div id="input-wrapper" class="flex-container">
@@ -34,7 +35,8 @@
                 Buscar
             </button>
         </form>
-        <p class="guideline-text">Ao clicar em "Baixar", você concorda com nossas diretrizes de uso justo.</p>
+        <p class="guideline-text">O usuário é o único responsável por garantir as diretrizes de uso e a licença do conteúdo baixado.<br>Não nos responsabilizamos por qualquer violação de direitos autorais<br>que você possa cometer ao utilizar esta ferramenta.</p>
+
         {% if messages %}
             <div id="feedback-messages">
                 {% for message in messages %}

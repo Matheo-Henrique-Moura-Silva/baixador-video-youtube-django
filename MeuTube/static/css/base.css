@@ -167,7 +167,7 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-between; 
     padding: 20px 5%;
     background-color: var(--color-background-primary); 
     color:var(--color-destaque-secundary);
@@ -175,7 +175,7 @@ footer {
 }
 
 .footer-col {
-    width: 250px; 
+    width: 350px; 
     margin-bottom: 20px;
 }
 
@@ -193,8 +193,14 @@ footer {
 .footer-bottom {
     text-align: center;
     padding: 10px 5%;
-    background-color: var(--color-primary);
+    background-color: var(--color-background-primary);
     color: var(--color-font);
     font-size: 0.8em;
+}
+
+.footer-contato {
+    color: var(--color-light);
+    display: flex;
+    align-items: center;
 }
 /* Fim - FOOTER */

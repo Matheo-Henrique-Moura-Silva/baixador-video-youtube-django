@@ -33,6 +33,16 @@
     margin-bottom: 1.5rem;
 }
 
+.secondary-text a {
+    color: var(--color-light);
+    opacity: 0.7;
+}
+
+.secondary-text a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-secundary);
+}
+
 .guideline-text {
     font-size: 0.8rem;
     color: var(--color-secundary);
@@ -229,4 +239,44 @@
     font-size: 0.75rem;
     margin-top: -1rem; 
     opacity: 0.8;
+}
+.termos-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--color-font);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+color: var(--color-primary);
+}
+.termos-container h1 {
+    color: var(--color-background-secundary);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-destaque-secondary);
+    padding-bottom: 10px;
+}
+.termos-container h3 {
+    color: var(--color-background-secundary);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.termos-container h4 {
+    margin-top: 15px;
+    font-weight: bold;
+}
+.termos-container ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+.alerta-responsabilidade {
+    background-color: var(--color-warning);
+    color: var(--color-destaque-primary);
+    border: 1px solid var(--color-light);
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 20px 0;
 }
