@@ -132,3 +132,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_download_progress_cache', # Nome da tabela que será criada
+        'OPTIONS': {
+            'MAX_ENTRIES': 50000, # Limite de chaves de cache (alto o suficiente)
+        },
+        'TIMEOUT': 300, # 5 minutos para expirar o progresso
+    }
+}

@@ -39,7 +39,14 @@
             <div class="loader"></div>
             <p>Buscando informações do vídeo...</p>
         </div>
-        <p class="guideline-text">O usuário é o único responsável por garantir as diretrizes de uso e a licença do conteúdo baixado.<br>Não nos responsabilizamos por qualquer violação de direitos autorais<br>que você possa cometer ao utilizar esta ferramenta.</p>
+        <p id="text-orientacao-site" class="guideline-text">O usuário é o único responsável por garantir as diretrizes de uso e a licença do conteúdo baixado.<br>Não nos responsabilizamos por qualquer violação de direitos autorais<br>que você possa cometer ao utilizar esta ferramenta.</p>
+
+        <div id="loading-spinner-download" class="spinner-hidden">
+            <div id="progress-container">
+                <div id="download-progress-bar" style="width: 0%;"></div>
+            </div>
+            <p id="progress-text">Iniciando download...</p>
+        </div>
 
         {% if messages %}
             <div id="feedback-messages">
@@ -65,14 +72,15 @@
             
             <div id="download-buttons-group" class="flex-container">
                 <p class="download-label">Qualidades De Vídeos Disponíveis:</p>
+                <input type="hidden" id="session-key-hidden" value="{{ session_id }}">
                 {% if formatos %}
                     {% for op, valor in formatos.items %}
-                        <form action="{% url 'website:iniciar_download' %}" method="POST">
+                        <form class="options-download" action="{% url 'website:iniciar_download' %}" method="POST">
                             {% csrf_token %}
                             {% for key, value in valor.items %}
                                 {% if key == 'format_id' %}
                                     <input
-                                        id="id_formato"
+                                        class="id_formato"
                                         name="id_formato"
                                         style="display: none;"
                                         value="{{ value }}"
@@ -86,12 +94,7 @@
                                 value="{{ url }}"
                             >
                             <button type="submit" class="download-btn-quality">
-                                Baixar | {{ op }}p |
-                                {% for key, value in valor.items %}
-                                    {% if key == 'tamanho' %}
-                                        {{ value }}
-                                    {% endif %}
-                                {% endfor %}
+                                Baixar | {{ op }}p | {{ valor.tamanho}}
                             </button>
                         </form>
                     {% endfor %}

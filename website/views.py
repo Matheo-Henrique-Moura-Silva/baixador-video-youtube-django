@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib import messages
 import yt_dlp as MeuTube
-from yt_dlp.utils import DownloadError, ExtractorError, SameFileError
+from yt_dlp.utils import DownloadError, ExtractorError
 import os
 import tempfile
-from django.http import FileResponse
+from django.http import FileResponse, JsonResponse
 from urllib.parse import urlparse, parse_qs, urlunparse, urlencode
+from django.core.cache import cache
 
 DOWNLOAD_DIR = tempfile.gettempdir()
 
@@ -28,17 +29,38 @@ def iniciar_download(request):
     id = request.POST.get("id_formato")
     id_composto = f'{id}+bestaudio'
 
+    session_key = request.session.session_key
+    if not session_key:
+        request.session.create()
+        session_key = request.session.session_key
+    download_key = f"{session_key}_{id}"
+
     FFMPEG_EXECUTABLE_PATH = r'C:\Program Files\ffmpeg-8.0.1-essentials_build\bin\ffmpeg.exe'
+
+    def progresso_download_closure(d):
+        cache_key = f'progress_{download_key}'
+
+        if d['status'] == 'downloading':
+            if d.get('total_bytes'):
+                percent = d['downloaded_bytes'] / d['total_bytes'] * 100
+            else:
+                percent = 5
+
+            cache.set(cache_key, percent, timeout=300)
+
+        elif d['status'] == 'finished':
+            cache.set(cache_key, 100.0, timeout=300)
 
     ydl_opts = {
         'format': id_composto,
-        'outtmpl': os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
+        'outtmpl': os.path.join(DOWNLOAD_DIR, f'{download_key}_%(title)s.%(ext)s'),
         'noplaylist': True,
         'quiet': True,
         'no_warnings': True,
         'cachedir': False,
         'nocheckcertificate': True,
         'ffmpeg_location': FFMPEG_EXECUTABLE_PATH,
+        'progress_hooks': [progresso_download_closure],
     }
 
     downloaded_filepath = None
@@ -118,7 +140,11 @@ def processar_video(request):
         formatos_brutos = info_video.get('formats')
         formatos_selecionados = filtrar_e_selecionar_qualidades(formatos_brutos)
 
+        if not request.session.session_key:
+            request.session.create()
+
         context = {
+            'session_id': request.session.session_key,
             'titulo': titulo,
             'thumbnail': thumbnail,
             'formatos': formatos_selecionados,
@@ -211,3 +237,13 @@ def converter_para_megabytes(size_bytes):
         return "Tamanho N/A"
     size_mb = size_bytes / (1024 * 1024)
     return f"{size_mb:.2f} MB"
+
+def check_progress(request):
+    download_key = request.GET.get('key', '')
+    cache_key = f'progress_{download_key}'
+    percent = cache.get(cache_key, 0)
+    print(f"CACHE DE LEITURA ATUAL: {cache_key} | Retorno: {percent}")
+
+    return JsonResponse({'progress': percent})
+
+

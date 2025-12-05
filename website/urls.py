@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('search/', views.processar_video, name='processar_video'),
     path('download/', views.iniciar_download, name='iniciar_download'),
+    path('check-progress/', views.check_progress, name='check_progress'),
     path('services/', views.termos_de_uso, name='termos_de_uso'),
     path('disclaimer/', views.isencao_responsabilidade, name='isencao_responsabilidade'),
 ]

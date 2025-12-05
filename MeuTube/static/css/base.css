@@ -208,7 +208,7 @@ footer {
     display: none;
 }
 
-#loading-spinner {
+#loading-spinner, #loading-spinner-download {
     text-align: center;
     margin-top: 20px;
     padding: 15px;
@@ -234,4 +234,38 @@ footer {
 
 .ocultar-section {
     display: none;
+}
+
+#loading-spinner-download {
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 500px; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progress-container {
+    width: 100%;
+    background-color: var(--color-font);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 30px; 
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#download-progress-bar {
+    height: 100%;
+    width: 0%; 
+    background-color: var(--color-destaque-secundary); 
+    transition: width 0.3s ease-in-out;
+    line-height: 30px;
+    color: var(--color-font);
+}
+
+#progress-text {
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
 }
