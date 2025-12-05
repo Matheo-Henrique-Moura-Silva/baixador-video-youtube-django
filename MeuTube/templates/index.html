@@ -35,6 +35,10 @@
                 Buscar
             </button>
         </form>
+        <div id="loading-spinner" class="spinner-hidden">
+            <div class="loader"></div>
+            <p>Buscando informações do vídeo...</p>
+        </div>
         <p class="guideline-text">O usuário é o único responsável por garantir as diretrizes de uso e a licença do conteúdo baixado.<br>Não nos responsabilizamos por qualquer violação de direitos autorais<br>que você possa cometer ao utilizar esta ferramenta.</p>
 
         {% if messages %}
@@ -47,8 +51,8 @@
             </div>
         {% endif %}
         <!-- Sessão de Opções de Download -->
-         {% if mostrar_opcoes and formatos %}
-        <section id="video-options-section" class="flex-container">
+        {% if mostrar_opcoes and formatos %}
+        <section id="video-options-section" class="flex-container video-options">
             
             <div id="video-info" class="flex-container">
                 <a href="{{ url }}" target="_blank">
@@ -98,7 +102,7 @@
             </div>
             
         </section>
-        <p class="guideline-text high-res-note">*Qualidades acima de 720p podem exigir processamento extra (somente vídeo).</p>
+        <p id="text-video-options-section" class="guideline-text high-res-note">*Qualidades acima de 720p podem exigir processamento extra (somente vídeo).</p>
         {% endif %}
     </div>
 </section>

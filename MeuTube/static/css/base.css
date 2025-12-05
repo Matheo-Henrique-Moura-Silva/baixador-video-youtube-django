@@ -204,3 +204,34 @@ footer {
     align-items: center;
 }
 /* Fim - FOOTER */
+.spinner-hidden {
+    display: none;
+}
+
+#loading-spinner {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--color-destaque-primary);
+}
+
+.loader {
+    border: 5px solid var(--color-font); 
+    border-top: 5px solid var(--color-secundary); 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite; 
+    margin: 0 auto 10px auto; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ocultar-section {
+    display: none;
+}
