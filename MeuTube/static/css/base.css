@@ -248,11 +248,10 @@ footer {
 
 #progress-container {
     width: 100%;
-    background-color: var(--color-font);
     border-radius: 4px;
     overflow: hidden;
-    height: 30px; 
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    height: 30px;
+    background-color: var(--color-secundary);
 }
 
 #download-progress-bar {
@@ -261,11 +260,70 @@ footer {
     background-color: var(--color-destaque-secundary); 
     transition: width 0.3s ease-in-out;
     line-height: 30px;
-    color: var(--color-font);
+    background-image: linear-gradient(
+        45deg,
+        var(--color-font) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        var(--color-font) 50%, 
+        var(--color-font) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    
+    background-size: 40px 40px; 
+    
+    animation: progress-stripes 2s linear infinite;
 }
 
 #progress-text {
     margin-top: 10px;
     font-size: 1em;
     font-weight: bold;
+}
+
+.loading-dots {
+    opacity: 0;
+    animation-name: dot-loading;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    transition: opacity 0.2s ease;
+}
+
+#spanc1 {
+    animation-delay: 0s;
+}
+
+#spanc2 {
+    animation-delay: 0.4s;
+}
+
+#spanc3 {
+    animation-delay: 0.8s; 
+}
+
+@keyframes dot-loading {
+    0%, 25% {
+        opacity: 0;
+    }
+    50%, 90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes progress-stripes {
+    0% {
+        background-position: 0 0; 
+    }
+    100% {
+        background-position: 40px 0; 
+    }
+}
+.progress-finished {
+    animation-play-state: paused !important; 
+    
+    background-image: none !important;
 }

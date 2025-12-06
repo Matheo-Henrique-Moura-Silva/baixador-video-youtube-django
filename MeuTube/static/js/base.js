@@ -78,6 +78,10 @@ function startPolling(downloadKey) {
 
                 if (percent >= 100) {
                     clearInterval(poll);
+                    const progressBar = document.getElementById('download-progress-bar');
+                    if (progressBar) {
+                        progressBar.classList.add('progress-finished');
+                    }
                     progressText.textContent = 'Download Concluído!';
                 }
             })
