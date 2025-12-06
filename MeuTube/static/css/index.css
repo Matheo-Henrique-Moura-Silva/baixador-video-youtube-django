@@ -280,3 +280,35 @@ color: var(--color-primary);
     font-weight: bold;
     margin: 20px 0;
 }
+
+.loading-dots {
+    opacity: 0;
+    animation-name: dot-loading;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    transition: opacity 0.2s ease;
+}
+
+#spanc1 {
+    animation-delay: 0s;
+}
+
+#spanc2 {
+    animation-delay: 0.4s;
+}
+
+#spanc3 {
+    animation-delay: 0.8s; 
+}
+
+@keyframes dot-loading {
+    0%, 25% {
+        opacity: 0;
+    }
+    50%, 90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

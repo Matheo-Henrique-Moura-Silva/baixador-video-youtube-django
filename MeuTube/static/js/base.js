@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('download-btn');
     const videoOptions = document.getElementById('video-options-section');
     const textVideoOptions = document.getElementById('text-video-options-section');
+    const progressDownload = document.getElementById('loading-spinner-download');
 
     formBuscar.addEventListener('submit', function() {
         searchButton.disabled = true;
-        searchButton.textContent = 'Aguarde...';
+        searchButton.innerHTML = 'Aguarde<span id="spanc1" class="loading-dots">.</span><span id="spanc2" class="loading-dots">.</span><span id="spanc3" class="loading-dots">.</span>';
         spinnerBusca.classList.remove('spinner-hidden');
         videoOptions.classList.toggle('ocultar-section');
         textVideoOptions.classList.toggle('ocultar-section');
+        progressDownload.classList.toggle('ocultar-section');
     });
 
     const downloadForms = document.querySelectorAll('.options-download');
@@ -47,6 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function startPolling(downloadKey) {
     const progressBar = document.getElementById('download-progress-bar');
     const progressText = document.getElementById('progress-text');
+    const progressDownload = document.getElementById('loading-spinner-download');
+
+    progressDownload.classList.remove('ocultar-section');
     
     progressBar.style.width = '0%';
     progressText.textContent = 'Iniciando Processamento...';
