@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28af0ff7-dc9e-4316-b211-73973f0b7b27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MeuTube/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/MeuTube/static/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MeuTube/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/MeuTube/static/css/index.css" afterDir="false" />
