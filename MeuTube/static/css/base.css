@@ -327,3 +327,91 @@ footer {
     
     background-image: none !important;
 }
+/* --- RESPONSIVIDADE GERAL --- */
+@media (max-width: 1200px) {
+    header {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    main {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 3.5rem; 
+    }
+    header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    #logo-site {
+        max-width: 10rem; 
+    }
+
+    
+    #nav-menu {
+        gap: 1.5rem !important; 
+        justify-content: center !important;
+    }
+    
+    #nav-menu li a {
+        font-size: 0.85rem;
+    }
+    
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    #feedback-messages {
+        width: 90%;
+        margin-top: 1rem;
+    }
+    
+    /* FOOTER */
+    footer {
+        padding-top: 5rem;
+    }
+
+    .footer-content {
+        flex-direction: column; 
+        padding: 20px 1rem;
+    }
+
+    .footer-col {
+        width: 100%; 
+        max-width: none;
+        margin-bottom: 20px;
+        text-align: center; 
+    }
+    
+    .footer-legal-contato ul, .social-icons {
+        text-align: center;
+    }
+
+    .footer-col h3, .footer-col h4 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-contato {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        padding: 10px 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #nav-menu {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+}

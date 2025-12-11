@@ -280,3 +280,170 @@ color: var(--color-primary);
     font-weight: bold;
     margin: 20px 0;
 }
+/* --- RESPONSIVIDADE INDEX (HERO, OPÇÕES, INSTRUÇÕES) --- */
+
+@media (max-width: 1200px) {
+    #video-options-section {
+        max-width: 95%; 
+        padding: 1rem;
+    }
+    #video-info {
+        max-width: 45%;
+    }
+    #download-buttons-group {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .main-subtitle {
+        font-size: 2rem; 
+    }
+    
+    .secondary-text, .guideline-text {
+        font-size: 0.9rem;
+    }
+
+    #download-form {
+        flex-direction: column; 
+        width: 95%;
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+    
+    #input-wrapper {
+        width: 100%; 
+        padding: 0;
+    }
+    
+    #download-btn {
+        width: 100%; 
+        padding: 0.7rem 1rem;
+        justify-content: center;
+    }
+
+    #instructions-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    #instruction-cards {
+        flex-direction: column; 
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .card {
+        max-width: 90%; 
+        width: 300px; 
+    }
+
+    /* SEÇÃO DE OPÇÕES DE VÍDEO */
+    #video-options-section {
+        flex-direction: column; 
+        align-items: center;
+        gap: 1.5rem;
+        margin: 1.5rem auto;
+        text-align: center;
+        width: 95%;
+    }
+    
+    #video-info {
+        max-width: 100%;
+        align-items: center;
+    }
+    
+    #video-thumbnail {
+        width: 100%; 
+        max-width: 300px; 
+    }
+    
+    #video-title {
+        font-size: 1.1rem;
+        -webkit-line-clamp: unset; 
+        text-overflow: unset;
+    }
+    
+    #download-buttons-group {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .download-label {
+        margin-bottom: 1rem;
+    }
+    
+    .options-download {
+        width: 100%; 
+    }
+    
+    .download-btn-quality {
+        width: 100%;
+    }
+    
+    .high-res-note {
+        padding: 0 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #download-buttons-group {
+        max-width: 100%; 
+        width: 100%;
+        gap: 0.75rem; 
+    }
+
+    .download-label {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .options-download {
+        width: 100%; 
+    }
+    
+    .download-btn-quality {
+        width: 100%; 
+        padding: 0.6rem 0.8rem; 
+        font-size: 1rem;
+    }
+    
+    .high-res-note {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    
+    .termos-container {
+        margin: 20px 10px; 
+        padding: 15px;
+        font-size: 0.95rem; 
+    }
+    
+    .termos-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .termos-container h3 {
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+    
+    .termos-container ul {
+        margin-left: 15px;
+        padding-left: 0;
+    }
+    
+    .alerta-responsabilidade {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
